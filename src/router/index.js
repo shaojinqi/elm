@@ -5,31 +5,44 @@ import Msite from '../pages/Msite/Msite.vue'
 import Order from '../pages/Order/Order.vue'
 import Profile from '../pages/Profile/Profile.vue'
 import Search from '../pages/Search/Search.vue'
+
+import Login from '@/pages/Login/Login.vue'
+
 Vue.use(Router)
 
-export default new Router({
-  mode : "history",
+
+export default new Router(
+  {
+    mode: "history",
   routes: [
     {
-      path:'/',
-      redirect:Msite
-     },
+      path: '/',
+      redirect: '/msite'
+    },
     {
-     path:'/msite',
-     components:Msite
+     path: '/msite',
+     component:Msite,
+     meta: {requiresAuth: true}
     },
     {
       path:'/order',
-      components:Order
+      component:Order,
+      meta: {requiresAuth: true}
      },
      {
-      path:'/Profile',
-      components:Profile
+      path:'/profile',
+      component:Profile,
+      meta: {requiresAuth: true}
      },
      {
       path:'/search',
-      components:Search
-     }
+      component:Search,
+      meta: {requiresAuth: true}
+     },
+     {
+      path: '/login',
+      component: Login
+  }
   ]
 })
  
