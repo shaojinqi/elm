@@ -4,4 +4,9 @@ export default {
     address:{},
     categorys: [],
     shops:[],
+    userInfo:{},
+    goods:[],
+    ratings:[],
+    info:{},
+    cartFoods:[]// 购物车数据
 }

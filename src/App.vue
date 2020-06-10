@@ -13,6 +13,9 @@ export default {
   components: {
     FooterGuide
   },
+  mounted () {
+    this.$store.dispatch('getUserInfo')
+  },
   data () {
     return {
       flag:true
